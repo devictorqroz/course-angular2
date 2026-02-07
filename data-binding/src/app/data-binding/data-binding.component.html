@@ -1,7 +1,7 @@
 
 <section class="property-binding">
 
-  <article>
+  <!-- <article>
     <h3>Interpolation / Interpolação</h3>
     <p>String renderizada com interpolação: {{ url }}</p>
     <p>Resultado de 1 + 1 é: {{ 1 + 1 }} </p>
@@ -17,7 +17,55 @@
     <img [src]="imageUrl"/>
 
     <img bind-src="imageUrl"/>
+  </article> -->
+
+  <article>
+    <h3>Class and Style Binding</h3>
+    <div>
+      Select a class:
+      <select #selectedClass (change)="0">
+        <option value="alert-success">Sucess</option>
+        <option value="alert-info">Info</option>
+        <option value="alert-warning">Warning</option>
+        <option value="alert-danger">Danger</option>
+      </select>
+      <br><br>
+
+
+      <div class="alert {{ selectedClass.value }}" role="alert">
+        Colored text by the value from combobox.
+      </div>
+
+      <div class="alert" role="alert"
+        [class.alert-success]="selectedClass.value == 'alert-success'">
+        Sucess
+      </div>
+
+      <div class="alert" role="alert"
+        [class.alert-info]="selectedClass.value == 'alert-info'">
+        Info
+      </div>
+
+      <div class="alert" role="alert"
+        [class.alert-warning]="selectedClass.value == 'alert-warning'">
+        Warning
+      </div>
+
+      <div class="alert" role="alert"
+        [class.alert-danger]="selectedClass.value == 'alert-danger'">
+        Error
+      </div>
+
+      <div class="alert alert-danger" role="alert"
+        [style.display]="selectedClass.value == 'alert-danger' ? 'block' : 'none'">
+        Error: This message should only be visible on failure.
+      </div>
+
+    </div>
+
   </article>
+
+
 
 </section>
 
