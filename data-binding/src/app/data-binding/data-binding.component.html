@@ -1,5 +1,5 @@
 
-<section class="property-binding">
+<!-- <section class="property-binding"> -->
 
   <!-- <article>
     <h3>Interpolation / Interpolação</h3>
@@ -19,7 +19,7 @@
     <img bind-src="imageUrl"/>
   </article> -->
 
-  <article>
+  <!-- <article>
     <h3>Class and Style Binding</h3>
     <div>
       Select a class:
@@ -63,9 +63,65 @@
 
     </div>
 
+  </article> -->
+
+<!-- </section> -->
+
+
+
+<section class="event-binding">
+
+  <article>
+    <h3>Event Binding</h3>
+    <div>
+      <button (click)="onButtonClick()"
+      class="btn btn-primary">
+        Click me!
+      </button>
+
+      <br><br>
+
+      <input type="text"
+        #inputField
+        (keyup)="onKeyUp($event)"
+        (keyup.enter)="saveValue(inputField.value)"
+        (blur)="saveValue(inputField.value)"
+      />
+
+      <p>Current value: {{ currentKeyEntered }}</p>
+      <p>Saved value: {{ savedValue }}</p>
+
+      <br><br>
+
+      <span
+        (mouseover)="onMouseOverOut()"
+        (mouseout)="onMouseOverOut()"
+        [class.highlight]="isMouseOver">
+        Hover your mouse over me
+      </span>
+
+    </div>
   </article>
 
-
-
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
