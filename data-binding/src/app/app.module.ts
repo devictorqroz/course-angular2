@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
+import { MyFormModule } from './my-form/my-form.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { DataBindingComponent } from './data-binding/data-binding.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    MyFormModule
   ],
   providers: [],
   bootstrap: [AppComponent]
