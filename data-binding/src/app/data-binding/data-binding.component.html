@@ -116,6 +116,13 @@
 
     <!-- <app-input-property [courseName]="courseName"></app-input-property> -->
     <app-input-property [name]="courseName"></app-input-property>
+
+
+    <counter [value]="initialValue"
+      (changeOfValue)="onChangeOfValue($event)"
+    ></counter>
+
+
   </article>
 
 </section>
