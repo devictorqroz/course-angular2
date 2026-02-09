@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter, Output, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'counter',
@@ -12,13 +12,15 @@ export class OutputPropertyComponent implements OnInit {
 
   @Output() changeOfValue = new EventEmitter();
 
+  @ViewChild('inputField') inputFieldValue: ElementRef;
+
   increase() {
-    this.value++;
+    this.inputFieldValue.nativeElement.value++;
     this.changeOfValue.emit({currentValue: this.value});
   }
 
   decrease() {
-    this.value--;
+    this.inputFieldValue.nativeElement.value--;
     this.changeOfValue.emit({currentValue: this.value});
   }
 
