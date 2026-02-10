@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { DirectiveNgifComponent } from './directive-ngif/directive-ngif.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DirectiveNgifComponent
   ],
   imports: [
     BrowserModule,
