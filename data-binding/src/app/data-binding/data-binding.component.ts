@@ -15,18 +15,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DataBindingComponent implements OnInit {
 
-  url: string = 'http://loiane.com';
-  angularCourse: boolean = true;
-  imageUrl: string = 'https://picsum.photos/400/200';
+  url = 'http://loiane.com';
+  angularCourse = true;
+  imageUrl = 'https://picsum.photos/400/200';
 
-  currentKeyEntered: string = '';
+  currentKeyEntered = '';
   savedValue: any;
 
-  isMouseOver: boolean = false;
+  isMouseOver = false;
 
-  courseName: string = 'Angular 2 (Classic)';
+  courseName = 'Angular 2 (Classic)';
 
-  initialValue: number = 15;
+  initialValue = 15;
 
   getValue() {
     return 1;

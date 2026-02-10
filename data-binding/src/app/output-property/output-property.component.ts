@@ -1,14 +1,14 @@
 import { Component, Input, OnInit, EventEmitter, Output, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
-  selector: 'counter',
+  selector: 'app-counter',
   templateUrl: './output-property.component.html',
   styleUrls: ['./output-property.component.css']
   // ,outputs: ['changeOfValue']
 })
 export class OutputPropertyComponent implements OnInit {
 
-  @Input() value: number = 0;
+  @Input() value = 0;
 
   @Output() changeOfValue = new EventEmitter();
 

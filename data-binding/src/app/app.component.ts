@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  value: number = 5;
+  value = 5;
 
-  deleteCycle: boolean = false;
+  deleteCycle = false;
 
   changeValue() {
     this.value++;

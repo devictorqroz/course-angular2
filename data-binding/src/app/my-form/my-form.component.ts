@@ -7,12 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyFormComponent implements OnInit {
 
-  phrase: string = 'lorem ipsum';
+  phrase = 'lorem ipsum';
 
   person: any = {
     name: 'Doe',
     age: 30
-  }
+  };
 
   constructor() { }
 

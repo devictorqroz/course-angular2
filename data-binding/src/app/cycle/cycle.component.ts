@@ -19,7 +19,7 @@ export class CycleComponent implements OnChanges, OnInit,
     AfterViewInit, AfterViewChecked, OnDestroy {
 
 
-    @Input() initialValue: number = 10;
+    @Input() initialValue = 10;
 
 
     constructor() {
