@@ -6,12 +6,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { DirectiveNgifComponent } from './directive-ngif/directive-ngif.component';
 import { ExampleComponent } from './example/example.component';
+import { DirectiveNgswitchComponent } from './directive-ngswitch/directive-ngswitch.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DirectiveNgifComponent,
-    ExampleComponent
+    ExampleComponent,
+    DirectiveNgswitchComponent
   ],
   imports: [
     BrowserModule,
