@@ -19,3 +19,31 @@
   <p *ngSwitchDefault>Home</p>
 </div>
 
+
+
+<h5>Removendo * e usando template</h5>
+
+
+<div class="container" [ngSwitch]="tab">
+  <p *ngSwitchCase="'map'">Map Mode</p>
+  <p *ngSwitchCase="'list'">List Mode</p>
+  <p *ngSwitchDefault>Home</p>
+</div>
+
+
+<div class="container" [ngSwitch]="tab">
+  <template [ngSwitchCase]="'map'">
+    <p>Map Mode</p>
+  </template>
+  <template [ngSwitchCase]="'list'">
+    <p>List Mode</p>
+  </template>
+  <template [ngSwitchCase]="'home'" ngSwitchDefault>
+    <p>Home</p>
+  </template>
+  <!-- <template ngSwitchDefault>
+    <p>Home</p>
+  </template> -->
+</div>
+
+
