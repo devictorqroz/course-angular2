@@ -1,0 +1,30 @@
+
+<h5>Styles with property binding (style binding)</h5>
+
+<button
+  [style.backgroundColor]="active ? 'green' : 'red'"
+  [style.color]="active ? 'white' : 'black'"
+  [style.fontWeight]="active ? 'bold' : 'normal'"
+  [style.fontSize]="myFontSize + 'px'"
+  (click)="switchOnOff()"
+  >
+  {{ active ? 'On' : 'Off' }}
+</button>
+<br>
+<input type="text" [(ngModel)]="myFontSize">
+
+<br><br>
+
+<h5>Styles with ngStyle directive</h5>
+
+<button
+  [ngStyle]="{
+    'backgroundColor': (active ? 'green' : 'red'),
+    'color': (active ? 'white' : 'black'),
+    'fontWeight': (active ? 'bold' : 'normal'),
+    'fontSize': myFontSize + 'px'
+  }"
+  (click)="switchOnOff()"
+>
+  {{ active ? 'On' : 'Off' }}
+</button>
