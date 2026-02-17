@@ -1,0 +1,7 @@
+<p>Description: {{ task.description }}</p>
+<!-- <p>Responsible {{ task.responsible.name }}</p> -->
+<p>Responsible: {{ task.responsible != null ? task.responsible.name : '' }}</p>
+<p>Responsible ID: {{ task.responsible?.id}}</p>
+<p>Responsible Status: {{ task.responsible?.status}}</p>
+<p>Responsible User username: {{ task.responsible?.user?.username}}</p>
+<p>Responsible User userId: {{ task.responsible?.user?.userId}}</p>
