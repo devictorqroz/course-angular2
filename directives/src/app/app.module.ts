@@ -11,6 +11,7 @@ import { DirectiveNgforComponent } from './directive-ngfor/directive-ngfor.compo
 import { DirectiveNgclassComponent } from './directive-ngclass/directive-ngclass.component';
 import { DirectiveNgstyleComponent } from './directive-ngstyle/directive-ngstyle.component';
 import { ElvisOperatorComponent } from './elvis-operator/elvis-operator.component';
+import { ExampleNgContentComponent } from './example-ng-content/example-ng-content.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ElvisOperatorComponent } from './elvis-operator/elvis-operator.componen
     DirectiveNgforComponent,
     DirectiveNgclassComponent,
     DirectiveNgstyleComponent,
-    ElvisOperatorComponent
+    ElvisOperatorComponent,
+    ExampleNgContentComponent
   ],
   imports: [
     BrowserModule,
