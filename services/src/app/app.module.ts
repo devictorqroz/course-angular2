@@ -4,20 +4,22 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { CoursesComponent } from './courses/courses.component';
 import { CoursesService } from './courses/courses.service';
+import { CreateCourseModule } from './create-course/create-course.module';
+import { CoursesModule } from './courses/courses.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    CoursesComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    CreateCourseModule,
+    CoursesModule
   ],
-  providers: [CoursesService],
+  // providers: [CoursesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
