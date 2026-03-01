@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { CoursesService } from '../courses/courses.service';
 import { CreateCourseComponent } from './create-course.component';
+import { CourseCreatedNotificationComponent } from '../course-created-notification/course-created-notification.component';
 
 @NgModule({
   declarations: [
-    CreateCourseComponent
+    CreateCourseComponent,
+    CourseCreatedNotificationComponent
   ],
   imports: [
     CommonModule

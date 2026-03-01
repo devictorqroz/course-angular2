@@ -12,16 +12,19 @@ export class CoursesComponent implements OnInit {
 
   courses: string[] = [];
 
-  // coursesService: CoursesService;
 
-  constructor(private coursesService: CoursesService) {
-    // this.coursesService = new CoursesService();
-    // this.coursesService = _coursesService;
-
-  }
+  constructor(private coursesService: CoursesService) {}
 
   ngOnInit() {
     this.courses = this.coursesService.getCourses();
+
+    // this.coursesService.courseCreated.subscribe(
+    //   course => console.log(course)
+    // );
+
+    CoursesService.newCourseCreated.subscribe(
+      course => this.courses.push(course)
+    );
   }
 
 }
