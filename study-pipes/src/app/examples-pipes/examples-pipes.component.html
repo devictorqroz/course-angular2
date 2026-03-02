@@ -1,14 +1,12 @@
 
 <h5>Examples Pipes</h5>
 
-<p>Title: {{ book.title | uppercase | lowercase }}</p>
+<p>Title: {{ book.title | uppercase | lowercase | camelCase }}</p>
 <p>Stars: {{ book.rating | number:'1.1-1' }}</p>
 <p>Pages: {{ book.totalPages | number }}</p>
 <p>Price: {{ book.price | currency:'BRL':true }}</p>
 <p>Publication Date: {{ book.publicationDate | date:'dd-MMM-yyyy' }}</p>
 <p>Url: {{ book.url }}</p>
 <br>
-<p>Book: {{ book | json | uppercase }}</p>
-
-
+<p>Book: {{ book | json }}</p>
 
