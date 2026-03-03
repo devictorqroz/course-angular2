@@ -8,6 +8,10 @@ import { ExamplesPipesComponent } from './examples-pipes/examples-pipes.componen
 import { CamelCasePipe } from './camel-case.pipe';
 import { SettingsService } from './settings.service';
 
+export function localeFactory(settingsService: SettingsService) {
+  return settingsService.getLocale();
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,15 +24,11 @@ import { SettingsService } from './settings.service';
     HttpModule
   ],
   providers: [
-    // {
-    //   provide: LOCALE_ID,
-    //   useValue: 'pt-BR'
-    // }
     SettingsService,
     {
       provide: LOCALE_ID,
       deps: [SettingsService],
-      useFactory: (settingService) => settingService.getLocale()
+      useFactory: localeFactory
     }
   ],
   bootstrap: [AppComponent]
