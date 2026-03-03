@@ -17,6 +17,14 @@ export class ExamplesPipesComponent implements OnInit {
 
   };
 
+  books: string [] = ['Java', 'Angular2'];
+
+  filter: string;
+
+  addBook(newBook) {
+    this.books.push(newBook);
+    console.log(this.books);
+  }
 
   constructor() { }
 

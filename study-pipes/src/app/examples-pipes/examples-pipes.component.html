@@ -10,3 +10,17 @@
 <br>
 <p>Book: {{ book | json }}</p>
 
+<input type="text" [(ngModel)]="filter">
+
+<br>
+
+<input type="text" #newBook>
+<button (click)="addBook(newBook.value)">Add Book</button>
+
+
+<ul>
+  <li *ngFor="let bookItem of books | filterArray:filter">
+    {{ bookItem }}
+  </li>
+</ul>
+
