@@ -8,6 +8,7 @@ import { ExamplesPipesComponent } from './examples-pipes/examples-pipes.componen
 import { CamelCasePipe } from './camel-case.pipe';
 import { SettingsService } from './settings.service';
 import { FilterArrayPipe } from './filter-array.pipe';
+import { FilterArrayImpurePipe } from './filter-array-impure.pipe';
 
 export function localeFactory(settingsService: SettingsService) {
   return settingsService.getLocale();
@@ -18,7 +19,8 @@ export function localeFactory(settingsService: SettingsService) {
     AppComponent,
     ExamplesPipesComponent,
     CamelCasePipe,
-    FilterArrayPipe
+    FilterArrayPipe,
+    FilterArrayImpurePipe
   ],
   imports: [
     BrowserModule,

@@ -26,9 +26,23 @@ export class ExamplesPipesComponent implements OnInit {
     console.log(this.books);
   }
 
+  getBooks() {
+    if (this.books.length === 0 || this.filter === undefined
+    || this.filter.trim() === '') {
+
+      return this.books;
+    }
+
+    return this.books.filter((v) => {
+      if (v.toLocaleLowerCase().indexOf(this.filter.toLowerCase()) >= 0) {
+        return true;
+      }
+      return false;
+    });
+  }
+
   constructor() { }
 
   ngOnInit() {
   }
-
 }
