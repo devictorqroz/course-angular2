@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs/Rx';
+
 import { CoursesService } from './courses.service';
 
 @Component({
@@ -9,11 +12,33 @@ import { CoursesService } from './courses.service';
 export class CoursesComponent implements OnInit {
 
   courses: any[];
+  page: number;
+  inscription: Subscription;
 
-  constructor(private coursesService: CoursesService) { }
+  constructor(
+    private coursesService: CoursesService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) { }
 
   ngOnInit() {
     this.courses = this.coursesService.getCourses();
+
+    this.inscription = this.route.queryParams.subscribe(
+      (queryParams: any) => {
+        this.page = queryParams['page'];
+      }
+    );
+  }
+
+  ngOnDestroy() {
+    this.inscription.unsubscribe();
+  }
+
+  nextPage() {
+    // this.page++;
+    this.router.navigate(['/courses'],
+      {queryParams: {'page': ++this.page}});
   }
 
 }
