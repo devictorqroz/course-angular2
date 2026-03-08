@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs/Rx';
 
-import { CoursesService } from 'app/courses/courses.service';
+import { CoursesService } from '../courses.service';
 
 @Component({
   selector: 'app-course-detail',
