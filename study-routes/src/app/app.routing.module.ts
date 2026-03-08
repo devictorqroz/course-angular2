@@ -1,4 +1,4 @@
-import { ModuleWithProviders } from '@angular/core';
+import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
@@ -7,7 +7,7 @@ import { CoursesComponent } from './courses/courses.component';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
 import { CourseNotFoundComponent } from './course-not-found/course-not-found.component';
 
-const APP_ROUTES: Routes = [
+const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'courses', component: CoursesComponent },
@@ -15,5 +15,10 @@ const APP_ROUTES: Routes = [
   { path: 'notFound', component: CourseNotFoundComponent}
 ];
 
-// export const routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);
+@NgModule({
+  imports: [RouterModule.forRoot(appRoutes)],
+  exports: [RouterModule]
+
+})
+export class AppRoutingModule {}
 
