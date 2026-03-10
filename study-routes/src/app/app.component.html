@@ -5,15 +5,15 @@
     <ul id="nav-mobile" class="left hide-on-med-and-down">
       <li routerLinkActive="active"><a routerLink="/login">Login</a></li>
       <li routerLinkActive="active"><a routerLink="/courses" [queryParams]="{page:1}">Courses</a></li>
-      <li routerLinkActive="active"><a [routerLink]="['/course', courseId.value]">Course with Id</a></li>
+      <!-- <li routerLinkActive="active"><a [routerLink]="['/course', courseId.value]">Course with Id</a></li> -->
       <li routerLinkActive="active"><a routerLink="/students">Students</a></li>
     </ul>
   </div>
 </nav>
 
 <div class="container">
-  <p>Enter course id</p>
-  <input #courseId>
+  <!-- <p>Enter course id</p> -->
+  <!-- <input #courseId> -->
   <router-outlet></router-outlet>
 </div>
 
