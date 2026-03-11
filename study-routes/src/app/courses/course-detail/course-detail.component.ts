@@ -32,7 +32,7 @@ export class CourseDetailComponent implements OnInit {
         this.course = this.coursesService.getCourse(this.id);
 
         if (this.course == null) {
-          this.router.navigate(['/notFound']);
+          this.router.navigate(['/courses/notFound']);
         }
       }
     );

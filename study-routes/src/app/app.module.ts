@@ -6,9 +6,9 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-import { CoursesModule } from './courses/courses.module';
+// import { CoursesModule } from './courses/courses.module';
+// import { StudentsModule } from './students/students.module';
 import { AppRoutingModule } from './app.routing.module';
-import { StudentsModule } from './students/students.module';
 
 @NgModule({
   declarations: [
@@ -20,8 +20,8 @@ import { StudentsModule } from './students/students.module';
     BrowserModule,
     FormsModule,
     HttpModule,
-    CoursesModule,
-    StudentsModule,
+    // CoursesModule,
+    // StudentsModule,
     AppRoutingModule
   ],
   providers: [],
