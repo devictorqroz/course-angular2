@@ -6,9 +6,8 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-// import { CoursesModule } from './courses/courses.module';
-// import { StudentsModule } from './students/students.module';
 import { AppRoutingModule } from './app.routing.module';
+import { AuthService } from './login/auth.service';
 
 @NgModule({
   declarations: [
@@ -20,11 +19,9 @@ import { AppRoutingModule } from './app.routing.module';
     BrowserModule,
     FormsModule,
     HttpModule,
-    // CoursesModule,
-    // StudentsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
