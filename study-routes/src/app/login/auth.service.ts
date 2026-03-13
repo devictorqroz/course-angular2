@@ -29,4 +29,10 @@ export class AuthService {
         this.navbarVisibility.emit(false);
     }
   }
+
+  isUserAuthenticated() {
+    return this.isAuthenticated;
+  }
+
+
 }
