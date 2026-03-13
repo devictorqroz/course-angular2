@@ -8,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './login/auth.service';
 import { AuthGuard } from './guards/auth.guard';
+import { CoursesGuard } from './guards/courses.guard';
+import { StudentsGuard } from './guards/students.guard';
 import { AppRoutingModule } from './app.routing.module';
 
 @NgModule({
@@ -22,7 +24,12 @@ import { AppRoutingModule } from './app.routing.module';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [
+    AuthService,
+    AuthGuard,
+    CoursesGuard,
+    StudentsGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
