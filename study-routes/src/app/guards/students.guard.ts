@@ -10,13 +10,13 @@ export class StudentsGuard implements CanActivateChild {
     state: RouterStateSnapshot
   ): Observable<boolean> | boolean {
 
-    console.log(route);
-    console.log(state);
+    // console.log(route);
+    // console.log(state);
 
     if (state.url.includes('edit')) {
-      alert('user unautorized!');
+      // alert('user unautorized!');
       // return false;
-      return Observable.of(false);
+      // return Observable.of(false);
     }
 
     return true;

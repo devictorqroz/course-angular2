@@ -13,6 +13,8 @@ export class StudentFormComponent implements OnInit {
   student: any = {};
   inscription: Subscription;
 
+  isFormChanged: boolean = false;
+
   constructor(
     private route: ActivatedRoute,
     private studentsService: StudentsService
@@ -34,6 +36,20 @@ export class StudentFormComponent implements OnInit {
 
   ngOnDestroy() {
     this.inscription.unsubscribe;
+  }
+
+  onInput() {
+    this.isFormChanged = true;
+    console.log('changed');
+  }
+
+  canDeactivate() {
+
+    if (this.isFormChanged) {
+      return confirm('You have unsaved changes. Are you sure you want to leave this page?');
+    }
+
+    return true;
   }
 
 }
