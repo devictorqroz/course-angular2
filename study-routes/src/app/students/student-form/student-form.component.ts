@@ -1,6 +1,7 @@
 import { StudentsService } from './../students.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { IFormCanDeactivate } from 'app/guards/iform-candeactivate.guard';
 import { Subscription } from 'rxjs/Rx';
 
 @Component({
@@ -8,7 +9,7 @@ import { Subscription } from 'rxjs/Rx';
   templateUrl: './student-form.component.html',
   styleUrls: ['./student-form.component.css']
 })
-export class StudentFormComponent implements OnInit {
+export class StudentFormComponent implements OnInit, IFormCanDeactivate {
 
   student: any = {};
   inscription: Subscription;
@@ -35,7 +36,7 @@ export class StudentFormComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    this.inscription.unsubscribe;
+    this.inscription.unsubscribe();
   }
 
   onInput() {
