@@ -6,6 +6,7 @@ import { StudentDetailComponent } from "./student-detail/student-detail.componen
 import { StudentFormComponent } from "./student-form/student-form.component";
 import { StudentsGuard } from "app/guards/students.guard";
 import { StudentsDeactivateGuard } from "app/guards/students-deactivate.guard";
+import { StudentDetailResolver } from './guards/student-detail.resolver';
 
 const studentsRoutes: Routes = [
   {
@@ -20,7 +21,8 @@ const studentsRoutes: Routes = [
        },
       {
         path: ':id',
-        component: StudentDetailComponent
+        component: StudentDetailComponent,
+        resolve: { student: StudentDetailResolver }
       },
       {
         path: ':id/edit',

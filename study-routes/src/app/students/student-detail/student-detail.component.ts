@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs/Rx';
+
 import { StudentsService } from '../students.service';
+import { Student } from '../student';
 
 @Component({
   selector: 'app-student-detail',
@@ -10,7 +12,7 @@ import { StudentsService } from '../students.service';
 })
 export class StudentDetailComponent implements OnInit {
 
-  student: any = {};
+  student: Student;
   inscription: Subscription;
 
   constructor(
@@ -20,11 +22,20 @@ export class StudentDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.inscription = this.route.params.subscribe(
+   /* this.inscription = this.route.params.subscribe(
       (params: any) => {
         let id = params['id'];
 
         this.student = this.studentService.getStudent(id);
+      }
+    ); */
+
+    console.log('ngOnInit: StudentDetailComponent');
+
+    this.inscription = this.route.data.subscribe(
+      (data: {student: Student}) => {
+        console.log('receiving student object from Resolver');
+        this.student = data.student;
       }
     );
   }

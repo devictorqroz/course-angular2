@@ -13,6 +13,8 @@ export class StudentsGuard implements CanActivateChild {
     // console.log(route);
     // console.log(state);
 
+    console.log('StudentsGaurd: Child routes guard');
+
     if (state.url.includes('edit')) {
       // alert('user unautorized!');
       // return false;
