@@ -1,29 +1,44 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
 import { AuthGuard } from "./guards/auth.guard";
 import { CoursesGuard } from "./guards/courses.guard";
-// import { StudentsGuard } from "./guards/students.guard";
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 
 const appRoutes: Routes = [
-  { path: 'login', component: LoginComponent
-  },
-  { path: '', component: HomeComponent,
-    canActivate: [AuthGuard]
-  },
-  { path: 'courses',
+  {
+    path: 'courses',
     loadChildren: 'app/courses/courses.module#CoursesModule',
     canActivate: [AuthGuard],
     canActivateChild: [CoursesGuard],
     canLoad: [AuthGuard]
   },
-  { path: 'students',
+  {
+    path: 'students',
     loadChildren: 'app/students/students.module#StudentsModule',
     canActivate: [AuthGuard],
     canLoad: [AuthGuard]
-    // canActivateChild: [StudentsGuard]
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'home',
+    component: HomeComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent,
+    canActivate: [AuthGuard]
   }
 ];
 
